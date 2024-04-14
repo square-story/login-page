@@ -1,0 +1,22 @@
+{
+  "name": "login-form-using-daily-tution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "nocache": "^4.0.0",
+    "nodemon": "^3.1.0",
+    "uuid": "^9.0.1"
+  }
+}

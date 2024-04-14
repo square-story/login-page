@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Montserrat", sans-serif;
+    background-image: url(assets/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.center-div{
+    padding-top: 10%;
+}
+form{
+    padding: 0 2em;
+}
+#login .title>span,.text-muted{
+    font-size: 0.8em;
+}

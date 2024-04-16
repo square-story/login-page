@@ -9,5 +9,7 @@
     <p><a class="btn btn-primary btn-lg" href="/route/logout" role="button">Log Out</a></p>
     </div>
     </div>
-    <img src="images/smart-feeder-pets-still-life.jpg" alt="">
+    <script>
+        window.history.pushState({}, document.title, window.location.pathname); // Add to the history stack
+      </script>
 <%-include("header")-%>

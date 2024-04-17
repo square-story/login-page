@@ -17,7 +17,7 @@ router.post('/login',(req,res)=>{
         res.redirect('/route/dashboard');
         // res.end("login successful")
     }else{
-        res.end("invalid username")
+        res.render('base',{title:"express",logout:"incorrect details"})
     }
 });
 //login successful and will redirect to dashboard

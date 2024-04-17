@@ -1,15 +1,9 @@
 <%-include("header")-%>
 <div class="container">
-    <!-- <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">My Homepage</a>
-    </nav> -->
     <div class="jumbotron">
     <h1 class="display-4">Welcome to my homepage!</h1>
-    <p class="lead"><%=locals.user?user:"user"%></p>
+    <p class="lead"><%=locals.user?user:"admin@gmail.com"%></p>
     <p><a class="btn btn-primary btn-lg" href="/route/logout" role="button">Log Out</a></p>
     </div>
     </div>
-    <script>
-        window.history.pushState({}, document.title, window.location.pathname); // Add to the history stack
-      </script>
 <%-include("header")-%>

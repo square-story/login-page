@@ -6,10 +6,15 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 //uuid creation for generation of token
 const {v4:uuidv4} = require('uuid');
+const nocache = require('nocache');
+
+
 //router path setting
 const route = require('./router')
 app.use(cookieParser());
 app.set("view engine",'ejs');
+
+
 //load static assets
 app.use('/static',express.static(path.join(__dirname,'public')))
 //insert background
@@ -21,15 +26,20 @@ app.use(bodyparser.urlencoded({extended:false}))
 app.use(session({
     secret:uuidv4(), //to create secret keys and unique
     resave:false,  // Set to true to force the session to be saved back to the session store
-    saveUninitialized:true, // Set to true to save uninitialized sessions
-    cookie: { secure: false } // Set to 'true' for HTTPS in production
+    saveUninitialized:false // Set to 'true' for HTTPS in production
 }));
+app.use(nocache());
 //route use app.use
 const port = process.env.PORT || 8000;
 app.use('/route',route)
 //home route
 app.get("/",(req,res)=>{
-    res.render("base",{title:"login system"});
+    if(!req.session.user){
+        res.render("base",{title:"login system"});
+    }
+    else{
+        res.render('dashboard')
+    }
 })
 app.listen(port,()=>{
     console.log("server is running on http://localhost:8000");
